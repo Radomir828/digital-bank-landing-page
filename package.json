@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "check": "prettier --check './src/**/*.{html,css,js}'",
-    "format": "prettier --write './src/**/*.{html,css,js}'",
-    "lint": "stylelint './src/**/*.css'",
-    "lintfix": "stylelint './src/**/*.css' --fix",
+    "check": "prettier --check './src/**/*.{html,css,scss,js}'",
+    "format": "prettier --write './src/**/*.{html,css,scss,js}'",
+    "lint": "stylelint './src/**/*.{css,scss}'",
+    "lintfix": "stylelint './src/**/*.{css, scss}' --fix",
     "checkAll": "npm run check && npm run lint",
     "fixAll": "npm run format && npm run lintfix",
     "build": "gulp build",
@@ -25,10 +25,15 @@
     "gulp-concat-css": "^3.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^10.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^6.0.1",
+    "html-minifier": "^4.0.0",
     "postcss": "^8.5.6",
     "postcss-combine-media-query": "^2.1.0",
     "prettier": "^3.6.2",
-    "stylelint": "^16.25.0"
+    "sass": "^1.93.3",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard-scss": "^16.0.0"
   },
   "browserslist": [
     "last 5 versions"

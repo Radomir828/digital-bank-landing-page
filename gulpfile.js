@@ -8,6 +8,8 @@ const autoprefixer = require('autoprefixer');
 const mediaquery = require('postcss-combine-media-query');
 const cssnano = require('cssnano');
 
+const sass = require('gulp-sass')(require('sass'));
+
 function serve() {
   browserSync.init({
     server: {
@@ -20,6 +22,18 @@ function html() {
   return gulp
     .src('src/**/*.html')
     .pipe(plumber())
+    .pipe(gulp.dest('dist/'))
+    .pipe(browserSync.reload({ stream: true }));
+}
+
+function scss() {
+  const plugins = [autoprefixer(), mediaquery(), cssnano()];
+
+  return gulp
+    .src('src/**/*.scss')
+    .pipe(sass())
+    .pipe(concat('bundle.css'))
+    .pipe(postcss(plugins))
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({ stream: true }));
 }
@@ -49,14 +63,16 @@ function clean() {
 function watchFiles() {
   gulp.watch(['src/**/*.html'], html);
   gulp.watch(['src/styles/**/*.css'], css);
+  gulp.watch(['src/**/*.scss'], scss);
   gulp.watch(['src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, images));
+const build = gulp.series(clean, gulp.parallel(html, scss, images));
 const watchapp = gulp.parallel(build, watchFiles, serve);
 
 exports.html = html;
 exports.css = css;
+exports.scss = scss;
 exports.images = images;
 exports.clean = clean;
 
