@@ -1,0 +1,11 @@
+@use '../globals' as *;
+
+.header {
+  @include flex(row, space-between, center);
+  padding: $spacing-250 $spacing-300;
+  background-color: $header-bg-color;
+
+  .navigation__button {
+    line-height: $line-height-0;
+  }
+}
