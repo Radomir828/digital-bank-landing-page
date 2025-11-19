@@ -1,0 +1,77 @@
+@use 'sass:map';
+
+$colors: (
+  'white': #ffffff,
+  'black': #000000,
+  'grey-600': #707070,
+  'grey-100': #f4f4f7,
+  'grey-50': #f8f8fa,
+  'blue-900': #21243d,
+  'green-400': #02c39a,
+);
+
+$gradient-1: linear-gradient(216.99deg, #33d35e 8.35%, #2ab6d9 97.75%);
+$gradient-2: linear-gradient(180deg, #21243d 0%, rgba(33, 36, 61, 0) 100%);
+//
+$header-bg-color: map.get($colors, 'white');
+$hero-bg-color: map.get($colors, 'white');
+$feature-bg-color: map.get($colors, 'grey-600');
+$articles-bg-color: map.get($colors, 'grey-100');
+$footer-bg-color: map.get($colors, 'blue-900');
+$modal-bg-color: map.get($colors, 'white');
+$modal-overlay-bg-color: $gradient-2;
+//
+$title-color: map.get($colors, 'blue-900');
+$main-text-color: map.get($colors, 'grey-600');
+$footer-title-color: map.get($colors, 'white');
+$footer-text-color: map.get($colors, 'white');
+$copyright-color: map.get($colors, 'grey-100');
+
+$btn-color: $gradient-1;
+
+$font-primary: 'Public Sans', sans-serif;
+
+// Font weights
+$weight-light: 300;
+$weight-regular: 400;
+$weight-bold: 700;
+
+// Font sizes
+$fs-50: 0.625rem; //10px
+$fs-100: 0.875rem; // 14px
+$fs-200: 1rem; // 16px
+$fs-300: 1.125rem; // 18px
+$fs-400: 1.5rem; // 24px
+$fs-500: 2rem; // 32px
+$fs-600: 2.5rem; // 40px
+$fs-700: 3.5rem; // 56px
+
+//spacing
+$spacing-0: 0;
+$spacing-100: 8px;
+$spacing-200: 16px;
+$spacing-250: 21.5px;
+$spacing-300: 24px;
+$spacing-400: 32px;
+$spacing-500: 40px;
+$spacing-600: 48px;
+$spacing-700: 56px;
+$spacing-800: 64px;
+$spacing-900: 72px;
+$spacing-1000: 80px;
+$spacing-1500: 120px;
+
+// leter-spacing
+$letter-spacing-0: 0;
+$letter-spacing-1: -0.25px;
+$letter-spacing-2: -0.4px;
+$letter-spacing-3: -0.5px;
+$letter-spacing-4: -0.75px;
+$letter-spacing-5: -1px;
+
+// line height
+$line-height-0: 0;
+$line-height-1: 115%;
+$line-height-2: 120%;
+$line-height-3: 155%;
+$line-height-4: 200%;
