@@ -15,16 +15,28 @@
   }
 }
 
-@mixin text-style($size, $weight, $line-height, $letter-spacing, $color) {
+@mixin text-style($size, $weight, $line-height, $letter-spacing, $color: null) {
   font-size: $size;
   font-weight: $weight;
   line-height: $line-height;
-  color: $color;
   letter-spacing: $letter-spacing;
+  @if $color != null {
+    color: $color;
+  }
 }
 
 @mixin cover-background {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+@mixin cover-background($image: null, $position: center) {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: $position;
+
+  @if $image != null {
+    background-image: url(#{$image});
+  }
 }
