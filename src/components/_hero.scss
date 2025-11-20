@@ -1,0 +1,41 @@
+@use '../globals' as *;
+
+.hero {
+  background-color: $hero-bg-color;
+  &__image-wrapper {
+    // background-image: url(../images/bg-intro-mobile.svg);
+    position: relative;
+    overflow: hidden;
+    @include cover-background('../images/bg-intro-mobile.svg', center -75px);
+
+    img {
+      position: relative;
+      margin-top: -115px;
+      padding: $spacing-0 $spacing-300;
+    }
+  }
+
+  &__content {
+    @include flex(column, center, center, $spacing-300);
+    padding: $spacing-600 $spacing-300 $spacing-700;
+    text-align: center;
+  }
+  &__title {
+    @include text-style(
+      $fs-600,
+      $weight-light,
+      $line-height-2,
+      $letter-spacing-4,
+      $title-color
+    );
+  }
+
+  &__text {
+    @include text-style(
+      $fs-100,
+      $weight-regular,
+      $line-height-1,
+      $letter-spacing-0
+    );
+  }
+}
