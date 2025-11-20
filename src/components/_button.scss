@@ -1,0 +1,15 @@
+@use '../globals' as *;
+
+.btn {
+  padding: $spacing-100 $spacing-400;
+  background: $btn-bg-color;
+  @include text-style(
+    $fs-100,
+    $weight-bold,
+    $line-height-4,
+    $letter-spacing-0,
+    $btn-color
+  );
+
+  border-radius: 22px;
+}
