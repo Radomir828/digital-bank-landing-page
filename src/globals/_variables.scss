@@ -27,7 +27,8 @@ $footer-title-color: map.get($colors, 'white');
 $footer-text-color: map.get($colors, 'white');
 $copyright-color: map.get($colors, 'grey-100');
 
-$btn-color: $gradient-1;
+$btn-bg-color: $gradient-1;
+$btn-color: map.get($colors, 'white');
 
 $font-primary: 'Public Sans', sans-serif;
 
