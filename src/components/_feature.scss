@@ -1,0 +1,26 @@
+@use '../globals' as *;
+
+.feature {
+  &__logo {
+    margin-bottom: $spacing-500;
+  }
+  &__title {
+    @include text-style(
+      $fs-400,
+      $weight-light,
+      $line-height-1,
+      $letter-spacing-2,
+      $title-color
+    );
+    margin-bottom: $spacing-300;
+  }
+
+  &__text {
+    @include text-style(
+      $fs-100,
+      $weight-regular,
+      $line-height-1,
+      $letter-spacing-0
+    );
+  }
+}
