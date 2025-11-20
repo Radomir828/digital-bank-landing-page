@@ -1,0 +1,32 @@
+@use '../globals' as *;
+
+.features {
+  padding: $spacing-800 $spacing-300;
+  background-color: $feature-bg-color;
+  text-align: center;
+
+  &__title {
+    @include text-style(
+      $fs-500,
+      $weight-light,
+      $line-height-2,
+      $letter-spacing-3,
+      $title-color
+    );
+    margin-bottom: $spacing-200;
+  }
+
+  &__text {
+    @include text-style(
+      $fs-100,
+      $weight-regular,
+      $line-height-1,
+      $letter-spacing-0
+    );
+    margin-bottom: $spacing-600;
+  }
+
+  &__list {
+    @include flex($direction: column, $gap: $spacing-400);
+  }
+}
