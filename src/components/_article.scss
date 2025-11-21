@@ -1,0 +1,46 @@
+@use '../globals/' as *;
+
+.article {
+  // > :not(.article__image) {
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+  background-color: $article-bg-color;
+  &__image {
+    margin-bottom: $spacing-300;
+  }
+  &__content {
+    max-width: 265px;
+    margin: 0 auto;
+  }
+  &__author {
+    display: inline-block;
+    // margin-bottom: $spacing-200;
+    margin: 0 auto $spacing-200;
+    @include text-style(
+      $fs-50,
+      $weight-regular,
+      $line-height-1,
+      $letter-spacing-0
+    );
+  }
+  &__title {
+    margin-bottom: $spacing-100;
+    @include text-style(
+      $fs-200,
+      $weight-light,
+      $line-height-2,
+      $letter-spacing-1,
+      $title-color
+    );
+  }
+  &__text {
+    margin-bottom: $spacing-300 + 5px;
+    @include text-style(
+      $fs-100,
+      $weight-regular,
+      $line-height-1,
+      $letter-spacing-0
+    );
+  }
+}

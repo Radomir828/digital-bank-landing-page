@@ -1,0 +1,24 @@
+@use '../globals/' as *;
+
+.articles {
+  padding: $spacing-800 $spacing-300;
+  background-color: $articles-bg-color;
+  &__title {
+    margin-bottom: $spacing-600;
+    text-align: center;
+    @include text-style(
+      $fs-500,
+      $weight-light,
+      $line-height-2,
+      $letter-spacing-3,
+      $title-color
+    );
+  }
+  &__list {
+    @include flex(
+      $direction: column,
+      $justify: space-around,
+      $gap: $spacing-200
+    );
+  }
+}
