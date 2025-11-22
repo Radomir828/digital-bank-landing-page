@@ -15,6 +15,11 @@
   }
 }
 
+@mixin grid($place: center) {
+  display: grid;
+  place-items: $place;
+}
+
 @mixin text-style($size, $weight, $line-height, $letter-spacing, $color: null) {
   font-size: $size;
   font-weight: $weight;
@@ -25,11 +30,11 @@
   }
 }
 
-@mixin cover-background {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
+// @mixin cover-background {
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center;
+// }
 
 @mixin cover-background($image: null, $position: center) {
   background-repeat: no-repeat;
