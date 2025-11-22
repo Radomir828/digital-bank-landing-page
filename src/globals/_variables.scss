@@ -3,11 +3,11 @@
 $colors: (
   'white': #ffffff,
   'black': #000000,
-  'grey-600': #707070,
-  'grey-100': #f4f4f7,
-  'grey-50': #f8f8fa,
-  'blue-900': #21243d,
-  'green-400': #02c39a,
+  'grey-600': #9597a5,
+  'grey-100': #f4f5f7,
+  'grey-50': #fafafa,
+  'blue-900': #2d314d,
+  'green-400': #30c88f,
 );
 
 $gradient-1: linear-gradient(216.99deg, #33d35e 8.35%, #2ab6d9 97.75%);
@@ -15,8 +15,9 @@ $gradient-2: linear-gradient(180deg, #21243d 0%, rgba(33, 36, 61, 0) 100%);
 //
 $header-bg-color: map.get($colors, 'white');
 $hero-bg-color: map.get($colors, 'white');
-$feature-bg-color: map.get($colors, 'grey-600');
-$articles-bg-color: map.get($colors, 'grey-100');
+$feature-bg-color: map.get($colors, 'grey-100');
+$articles-bg-color: map.get($colors, 'grey-50');
+$article-bg-color: map.get($colors, 'white');
 $footer-bg-color: map.get($colors, 'blue-900');
 $modal-bg-color: map.get($colors, 'white');
 $modal-overlay-bg-color: $gradient-2;
