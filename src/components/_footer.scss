@@ -1,0 +1,52 @@
+@use '../globals' as *;
+
+.footer {
+  @include grid;
+  padding: $spacing-700 0;
+  background-color: $footer-bg-color;
+  color: $footer-text-color;
+
+  &__wrapper {
+    max-width: 224px;
+    text-align: center;
+  }
+
+  .logo {
+    display: inline-block;
+    margin-bottom: $spacing-400;
+  }
+
+  &__social-list {
+    @include flex($justify: center, $gap: $spacing-200);
+    margin-bottom: $spacing-400;
+  }
+
+  &__nav {
+    margin-bottom: $spacing-400;
+    @include text-style(
+      $fs-100,
+      $weight-regular,
+      $line-height-1,
+      $letter-spacing-0
+    );
+    &-list {
+      @include flex($direction: column, $gap: $spacing-200);
+    }
+  }
+
+  &__button {
+    margin-bottom: $spacing-300;
+  }
+
+  &__copyright {
+    color: $copyright-color;
+    @include text-style(
+      $fs-100,
+      $weight-regular,
+      $line-height-1,
+      $letter-spacing-0
+    );
+
+    opacity: 0.5;
+  }
+}
