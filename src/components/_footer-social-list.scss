@@ -1,0 +1,8 @@
+@use '../globals' as *;
+
+.footer__social-list {
+  @include flex($direction: row, $justify: center, $gap: $spacing-200);
+  @media (width > 1200px) {
+    justify-content: flex-start;
+  }
+}

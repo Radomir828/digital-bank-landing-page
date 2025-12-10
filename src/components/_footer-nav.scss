@@ -1,0 +1,21 @@
+@use '../globals' as *;
+
+.footer__nav {
+  @include flex($direction: column, $justify: center, $gap: $spacing-200);
+  flex: 1;
+  @include text-style(
+    $fs-100,
+    $weight-regular,
+    $line-height-1,
+    $letter-spacing-0
+  );
+  @media (width > 1200px) {
+    @include flex($direction: row, $gap: $spacing-500);
+  }
+  &-list {
+    @include flex($direction: column, $gap: $spacing-200);
+    @media (width > 1200px) {
+      gap: $spacing-300;
+    }
+  }
+}

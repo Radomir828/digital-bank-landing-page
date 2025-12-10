@@ -1,0 +1,13 @@
+@use '../globals' as *;
+
+.copyright {
+  color: $copyright-color;
+  @include text-style(
+    $fs-100,
+    $weight-regular,
+    $line-height-1,
+    $letter-spacing-0
+  );
+
+  opacity: 0.5;
+}

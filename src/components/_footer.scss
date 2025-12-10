@@ -1,52 +1,45 @@
 @use '../globals' as *;
 
 .footer {
-  @include grid;
-  padding: $spacing-700 0;
+  @include grid($place-items: center);
+  padding-block: $spacing-700;
   background-color: $footer-bg-color;
   color: $footer-text-color;
 
+  @media (width > 1200px) {
+    padding-block: $spacing-600;
+  }
+
   &__wrapper {
-    max-width: 224px;
+    max-width: 1100px;
+    width: 100%;
+    @include flex($direction: column, $gap: $spacing-400);
     text-align: center;
-  }
 
-  .logo {
-    display: inline-block;
-    margin-bottom: $spacing-400;
-  }
-
-  &__social-list {
-    @include flex($justify: center, $gap: $spacing-200);
-    margin-bottom: $spacing-400;
-  }
-
-  &__nav {
-    margin-bottom: $spacing-400;
-    @include text-style(
-      $fs-100,
-      $weight-regular,
-      $line-height-1,
-      $letter-spacing-0
-    );
-    &-list {
-      @include flex($direction: column, $gap: $spacing-200);
+    @media (width > 1200px) {
+      @include flex(
+        $direction: row,
+        $justify: space-between,
+        $align: flex-start
+      ); // ovdje pogledati o gap, zasad bez
+      text-align: left;
     }
   }
 
-  &__button {
-    margin-bottom: $spacing-300;
+  &__logo-social__column {
+    @include flex($direction: column, $gap: $spacing-400);
+    @media (width > 1200px) {
+      @include flex($direction: column, $gap: $spacing-700);
+
+      flex: 0 0 auto;
+    }
   }
 
-  &__copyright {
-    color: $copyright-color;
-    @include text-style(
-      $fs-100,
-      $weight-regular,
-      $line-height-1,
-      $letter-spacing-0
-    );
-
-    opacity: 0.5;
+  &__button-copyright__column {
+    @include flex($direction: column, $align: center, $gap: $spacing-300);
+    @media (width > 1200px) {
+      @include flex($direction: column, $align: end);
+      flex: 0 0 auto;
+    }
   }
 }
