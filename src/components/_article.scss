@@ -1,22 +1,28 @@
 @use '../globals/' as *;
 
 .article {
-  // > :not(.article__image) {
-  //   margin-left: auto;
-  //   margin-right: auto;
-  // }
   background-color: $article-bg-color;
+  border-radius: 5px;
+
   &__image {
-    margin-bottom: $spacing-300;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
   }
   &__content {
-    max-width: 265px;
-    margin: 0 auto;
+    padding-block: $spacing-300;
+    padding-inline: $spacing-400;
+
+    @media (width >= 768px) {
+      padding-inline: $spacing-500;
+    }
+    @media (width >= 1200px) {
+      padding-inline: $spacing-250 - 2px;
+    }
   }
   &__author {
     display: inline-block;
-    // margin-bottom: $spacing-200;
-    margin: 0 auto $spacing-200;
+    margin-bottom: $spacing-200;
     @include text-style(
       $fs-50,
       $weight-regular,
@@ -35,7 +41,6 @@
     );
   }
   &__text {
-    margin-bottom: $spacing-300 + 5px;
     @include text-style(
       $fs-100,
       $weight-regular,

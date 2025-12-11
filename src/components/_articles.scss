@@ -3,6 +3,14 @@
 .articles {
   padding: $spacing-800 $spacing-300;
   background-color: $articles-bg-color;
+  @media (width >= 768px) {
+    padding: $spacing-1000;
+  }
+
+  @media (width >= 1200px) {
+    padding: 83px 162px;
+  }
+
   &__title {
     margin-bottom: $spacing-600;
     text-align: center;
@@ -13,12 +21,17 @@
       $letter-spacing-3,
       $title-color
     );
+    @media (width >= 768px) {
+      margin-bottom: $spacing-800;
+    }
+    @media (width >= 1200px) {
+      margin-bottom: $spacing-700;
+    }
   }
   &__list {
-    @include flex(
-      $direction: column,
-      $justify: space-around,
-      $gap: $spacing-200
-    );
+    @include grid($column: repeat(auto-fit, minmax(255px, 1fr)), $gap: 16px);
+    @media (width >= 1440px) {
+      @include grid($gap: 32px);
+    }
   }
 }
