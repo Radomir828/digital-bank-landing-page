@@ -2,39 +2,67 @@
 
 @mixin flex(
   $direction: row,
-  $justify: flex-start,
+  // $justify: flex-start,
+  $justify: null,
   $align: stretch,
-  $gap: null
+  $gap: null,
+  $flex-wrap: null
 ) {
   display: flex;
   flex-direction: $direction;
-  justify-content: $justify;
+  @if $justify != null {
+    justify-content: $justify;
+  }
+
   align-items: $align;
   @if $gap != null {
     gap: $gap;
   }
+  @if $flex-wrap != null {
+    flex-wrap: $flex-wrap;
+  }
 }
 
-@mixin grid($place: center) {
+@mixin grid(
+  $column: null,
+  $row: null,
+  $gap: null,
+  $row-gap: null,
+  $column-gap: null,
+  $place-items: null
+) {
   display: grid;
-  place-items: $place;
+  grid-template-columns: $column;
+  grid-template-rows: $row;
+  gap: $gap;
+  row-gap: $row-gap;
+  column-gap: $column-gap;
+  place-items: $place-items;
 }
 
-@mixin text-style($size, $weight, $line-height, $letter-spacing, $color: null) {
-  font-size: $size;
-  font-weight: $weight;
-  line-height: $line-height;
-  letter-spacing: $letter-spacing;
+@mixin text-style(
+  $size: null,
+  $weight: null,
+  $line-height: null,
+  $letter-spacing: null,
+  $color: null
+) {
+  @if $size != null {
+    font-size: $size;
+  }
+  @if $weight != null {
+    font-weight: $weight;
+  }
+  @if $line-height != null {
+    line-height: $line-height;
+  }
+  @if $letter-spacing != null {
+    letter-spacing: $letter-spacing;
+  }
   @if $color != null {
     color: $color;
   }
 }
-
-// @mixin cover-background {
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-position: center;
-// }
 
 @mixin cover-background($image: null, $position: center) {
   background-repeat: no-repeat;

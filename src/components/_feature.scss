@@ -1,6 +1,10 @@
 @use '../globals' as *;
 
 .feature {
+  @media (width >= 768px) {
+    text-align: left;
+  }
+
   &__logo {
     margin-bottom: $spacing-500;
   }
@@ -15,12 +19,15 @@
     margin-bottom: $spacing-300;
   }
 
-  &__text {
+  &__description {
     @include text-style(
       $fs-100,
       $weight-regular,
       $line-height-1,
       $letter-spacing-0
     );
+    @media (width >= 768px) {
+      @include text-style($fs-200, $line-height-2, $letter-spacing-1);
+    }
   }
 }

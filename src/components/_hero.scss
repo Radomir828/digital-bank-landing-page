@@ -1,9 +1,22 @@
 @use '../globals' as *;
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-500;
   background-color: $hero-bg-color;
+
+  @media (width >= 1200px) {
+    flex-direction: row-reverse;
+    padding-left: clamp(
+      24px,
+      calc(24px + (167 - 24) * ((100vw - 375px) / (1440 - 375))),
+      167px
+    );
+    gap: 64px;
+  }
   &__image-wrapper {
-    // background-image: url(../images/bg-intro-mobile.svg);
     position: relative;
     overflow: hidden;
     @include cover-background('../images/bg-intro-mobile.svg', center -75px);
@@ -13,21 +26,61 @@
       margin-top: -115px;
       padding: $spacing-0 $spacing-300;
     }
+
+    @media (width >= 768px) {
+      @include cover-background(
+        '../images/bg-intro-desktop.svg',
+        center -140px
+      );
+      img {
+        margin-top: -215px;
+        padding: $spacing-0 82px;
+      }
+    }
+
+    @media (width >= 1200px) {
+      flex: 1;
+      img {
+        padding: 0;
+        translate: 150px;
+      }
+    }
   }
 
   &__content {
     @include flex(column, center, center, $spacing-300);
-    padding: $spacing-600 $spacing-300 $spacing-700;
+    padding: $spacing-0 $spacing-300 $spacing-700;
     text-align: center;
+
+    @media (width >= 768px) {
+      max-width: 447px;
+      padding: 0 0 72px 0;
+    }
+
+    @media (width >= 1200px) {
+      align-items: start;
+      align-self: center;
+      padding: 0;
+
+      // margin-left: 30px;
+      text-align: left;
+    }
+
+    @media (width >= 1400px) {
+      // padding-left: 160px;
+    }
   }
   &__title {
     @include text-style(
-      $fs-600,
+      clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem),
       $weight-light,
       $line-height-2,
       $letter-spacing-4,
       $title-color
     );
+    @media (width >= 768px) {
+      @include text-style($letter-spacing: $letter-spacing-5);
+    }
   }
 
   &__text {
@@ -37,5 +90,13 @@
       $line-height-1,
       $letter-spacing-0
     );
+
+    @media (width >= 768px) {
+      @include text-style(
+        $size: $fs-300,
+        $line-height: $line-height-3,
+        $letter-spacing: $letter-spacing-1
+      );
+    }
   }
 }

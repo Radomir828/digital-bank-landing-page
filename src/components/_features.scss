@@ -5,6 +5,15 @@
   background-color: $feature-bg-color;
   text-align: center;
 
+  @media (width >=768px) {
+    padding: $spacing-1000;
+  }
+
+  @media (width >=1200px) {
+    padding: 96px 162px;
+    text-align: left;
+  }
+
   &__title {
     @include text-style(
       $fs-500,
@@ -14,6 +23,17 @@
       $title-color
     );
     margin-bottom: $spacing-200;
+
+    @media (width >=768px) {
+      // max-width: 518px;
+      @include text-style($fs-600, $letter-spacing: $letter-spacing-4);
+      margin-bottom: $spacing-400;
+      text-align: center;
+    }
+
+    @media (width >=1200px) {
+      text-align: left;
+    }
   }
 
   &__text {
@@ -24,9 +44,30 @@
       $letter-spacing-0
     );
     margin-bottom: $spacing-600;
+
+    @media (width >= 768px) {
+      // max-width: 518px;
+      @include text-style(
+        $fs-300,
+        $line-height: $line-height-3,
+        $letter-spacing: $letter-spacing-1
+      );
+      margin-bottom: $spacing-900;
+      text-align: center;
+    }
+    @media (width >= 1200px) {
+      max-width: 635px;
+      text-align: left;
+    }
   }
 
   &__list {
-    @include flex($direction: column, $gap: $spacing-400);
+    // @include flex($direction: column, $gap: $spacing-400);
+    @include grid($column: repeat(auto-fit, minmax(255px, 1fr)), $gap: 32px);
+
+    @media (width >= 768px) {
+      column-gap: 56px;
+      row-gap: 64px;
+    }
   }
 }

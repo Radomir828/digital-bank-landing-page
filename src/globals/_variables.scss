@@ -14,7 +14,7 @@ $gradient-1: linear-gradient(216.99deg, #33d35e 8.35%, #2ab6d9 97.75%);
 $gradient-2: linear-gradient(180deg, #21243d 0%, rgba(33, 36, 61, 0) 100%);
 //
 $header-bg-color: map.get($colors, 'white');
-$hero-bg-color: map.get($colors, 'white');
+$hero-bg-color: map.get($colors, 'grey-50');
 $feature-bg-color: map.get($colors, 'grey-100');
 $articles-bg-color: map.get($colors, 'grey-50');
 $article-bg-color: map.get($colors, 'white');

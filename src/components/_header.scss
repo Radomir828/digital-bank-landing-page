@@ -8,4 +8,11 @@
   .navigation__button {
     line-height: $line-height-0;
   }
+
+  @media (width >= 768px) {
+    padding: $spacing-250 $spacing-1000;
+  }
+  @media (width >= 1440px) {
+    padding: 18px 165px;
+  }
 }
